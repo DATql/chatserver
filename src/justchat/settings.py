@@ -15,6 +15,7 @@ SECRET_KEY = 'django-insecure-e9%$)akr5cg4g=+49*ow*4=^&nsguear@dnz@4zwbyy6bm@&$3
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'chat.User'
 
 
 # Application definition
@@ -73,13 +74,15 @@ CHANNEL_LAYERS = {
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+import pymysql
+pymysql.install_as_MySQLdb()
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'chatserver1',
+        'NAME': 'chatserver',
         'USER': 'root',
-        'PASSWORD': '12345678',
+        'PASSWORD': 'Goneanhem1',
         'HOST': ''  # mặc định localhost
     }
 }
@@ -126,5 +129,4 @@ STATICFILES_DIRS = [
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
